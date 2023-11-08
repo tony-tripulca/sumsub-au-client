@@ -1,17 +1,16 @@
 class URL {
   static api() {
-    let env = process.env.APP_ENV;
+    let env = process.env.REACT_APP_ENV;
 
-    /** Change the links respective to environments */
     if (env === "dev") {
-      return "https://9b4c-112-198-208-1.ngrok-free.app";
+      return "http://localhost:1337";
     } else if (env === "uat") {
-      return "https://9b4c-112-198-208-1.ngrok-free.app";
+      return "/";
     } else if (env === "prod") {
-      return "https://9b4c-112-198-208-1.ngrok-free.app";
+      return "/";
     }
 
-    return "https://9b4c-112-198-208-1.ngrok-free.app";
+    return "/";
   }
 }
 

@@ -1,1 +1,1 @@
-# Sumsub Example Client
+# Sumsub AU Client

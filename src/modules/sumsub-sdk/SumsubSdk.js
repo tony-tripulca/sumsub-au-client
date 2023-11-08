@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
-
 import SumsubWebSdk from "@sumsub/websdk-react";
 
-import "./SumsubSdk.scss";
+import { Box, Typography } from "@mui/material";
+
 import AccessTokenService from "../../services/AccessTokenService";
+
+import "./SumsubSdk.scss";
 
 function SumsubSdk() {
   const [accessToken, setAccessToken] = useState(null);
@@ -34,14 +36,19 @@ function SumsubSdk() {
 
   if (accessToken) {
     return (
-      <SumsubWebSdk
-        accessToken={accessToken}
-        expirationHandler={accessTokenExpirationHandler}
-        config={{ lang: "en" }}
-        // options={options}
-        onMessage={messageHandler}
-        onError={errorHandler}
-      />
+      <Box>
+        <Typography sx={{ textAlign: "center", fontSize: "2rem" }}>
+          {process.env.REACT_APP_NAME}
+        </Typography>
+        <SumsubWebSdk
+          accessToken={accessToken}
+          expirationHandler={accessTokenExpirationHandler}
+          config={{ lang: "en" }}
+          // options={options}
+          onMessage={messageHandler}
+          onError={errorHandler}
+        />
+      </Box>
     );
   }
 }
